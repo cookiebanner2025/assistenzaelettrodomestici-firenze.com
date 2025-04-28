@@ -2848,14 +2848,18 @@ function injectConsentHTML(detectedCookies, language = 'en') {
 
 
 
-/* Override for reject button - mobile and desktop */
-#rejectAllBtn.cookie-btn.reject-btn,
+/* Override for REJECT ALL button */
+#rejectAllBtn.cookie-btn.reject-btn {
+    background-color: #ffffff !important;  /* White background */
+    color: #ff0000 !important;            /* Red text */
+    border: 1px solid #ff0000 !important; /* Red border */
+}
+
+/* Hover state - optional (keeps same style) */
 #rejectAllBtn.cookie-btn.reject-btn:hover {
-    background-color: #ff0000 !important; /* Red background */
-    color: #000000 !important;            /* Black text */
-    border-color: #00ff00 !important;     /* Green border */
-    border-width: 1px !important;
-    border-style: solid !important;
+    background-color: #ffffff !important;
+    color: #ff0000 !important;
+    border: 1px solid #ff0000 !important;
 }
 
 
