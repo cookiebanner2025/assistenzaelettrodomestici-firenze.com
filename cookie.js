@@ -1877,6 +1877,7 @@ function injectConsentHTML(detectedCookies, language = 'en') {
         transform: translateY(0);
         opacity: 1;
         display: block;
+        margin-bottom: 27px;
     }
 
     .cookie-consent-content h2 {
