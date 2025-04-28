@@ -51,7 +51,7 @@ const config = {
         defaultLanguage: 'it',
         availableLanguages: ['it', 'en'], // Only en and fr will be used as requested
         showLanguageSelector: true,
-        autoDetectLanguage: true
+        autoDetectLanguage: false
     },
     
     // Geo-targeting configuration
