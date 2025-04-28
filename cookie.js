@@ -1,3 +1,17 @@
+/**
+ * Ultimate GDPR Cookie Consent Solution v4.4 - Advanced Edition
+ * - Fully organized configuration with separate styling controls
+ * - Complete admin dashboard with password protection
+ * - Enhanced analytics tracking
+ * - Multi-language support
+ * - Mobile-friendly cookie details display
+ * - Three-section analytics dashboard (1 day, 7 days, 30 days)
+ * - Animation transition controls
+ * - Banner scheduling functionality
+ * - Consent analytics link
+ */
+
+// ============== CONFIGURATION SECTION ============== //
 const config = {
     // Domain restriction
     allowedDomains: ['dev-rpractice.pantheonsite.io', 'assistenzaelettrodomestici-firenze.com'],
@@ -51,7 +65,7 @@ const config = {
         defaultLanguage: 'it',
         availableLanguages: ['it', 'en'], // Only en and fr will be used as requested
         showLanguageSelector: true,
-        autoDetectLanguage: false
+        autoDetectLanguage: true
     },
     
     // Geo-targeting configuration
@@ -70,7 +84,7 @@ const config = {
         storageDays: 365,
         showDashboard: true,
         passwordProtect: true,
-        dashboardPassword: 'firenze',
+        dashboardPassword: 'admin123',
         passwordCookieDuration: 365,
         trackPageViews: true,
         trackEvents: true,
@@ -1380,10 +1394,10 @@ function checkGeoTargeting(geoData) {
 
 // Detect user language based on country and browser settings
 function detectUserLanguage(geoData) {
-    // First check if language is stored in cookie (if remembering is enabled)
+    // First check if language is stored in cookie
     if (config.behavior.rememberLanguage) {
         const preferredLanguage = getCookie('preferred_language');
-        if (preferredLanguage && config.languageConfig.availableLanguages.includes(preferredLanguage)) {
+        if (preferredLanguage && translations[preferredLanguage]) {
             return preferredLanguage;
         }
     }
@@ -1391,19 +1405,19 @@ function detectUserLanguage(geoData) {
     // Then try to get language from country if auto-detection is enabled
     if (config.languageConfig.autoDetectLanguage && geoData && geoData.country) {
         const countryLang = countryLanguageMap[geoData.country];
-        if (countryLang && config.languageConfig.availableLanguages.includes(countryLang)) {
+        if (countryLang && translations[countryLang]) {
             return countryLang;
         }
     }
     
-    // Then check browser language (only if it's in available languages)
+    // Fallback to browser language
     const browserLang = (navigator.language || 'en').split('-')[0];
-    if (config.languageConfig.availableLanguages.includes(browserLang)) {
+    if (translations[browserLang]) {
         return browserLang;
     }
     
     // Final fallback to configured default language
-    return config.languageConfig.defaultLanguage;
+    return config.languageConfig.defaultLanguage || 'en';
 }
 
 // Get available languages for dropdown
