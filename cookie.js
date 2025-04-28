@@ -2848,11 +2848,11 @@ function injectConsentHTML(detectedCookies, language = 'en') {
 
 
 
-/* Override for REJECT ALL button */
 #rejectAllBtn.cookie-btn.reject-btn {
-    background-color: #ffffff !important;  /* White background */
-    color: #ff0000 !important;            /* Red text */
-    border: 1px solid #ff0000 !important; /* Red border */
+    background-color: #ffffff !important;
+    color: #ff0000 !important;
+    border: none !important;
+    box-shadow: 0 0 0 0.5px #ff0000 !important; /* Thin red "border" */
 }
 
 /* Hover state - optional (keeps same style) */
