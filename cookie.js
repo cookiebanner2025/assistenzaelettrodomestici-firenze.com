@@ -14,7 +14,7 @@
 // ============== CONFIGURATION SECTION ============== //
 const config = {
     // Domain restriction
-    allowedDomains: ['dev-rpractice.pantheonsite.io', 'practicebdhere.myshopify.com', 'habibarafat.com'],
+    allowedDomains: ['dev-rpractice.pantheonsite.io', 'assistenzaelettrodomestici-firenze.com'],
     
     // Behavior configuration
     behavior: {
@@ -62,8 +62,8 @@ const config = {
     
     // Language configuration
     languageConfig: {
-        defaultLanguage: 'en',
-        availableLanguages: [], // Only en and fr will be used as requested
+        defaultLanguage: 'it',
+        availableLanguages: [en,it], // Only en and fr will be used as requested
         showLanguageSelector: true,
         autoDetectLanguage: true
     },
