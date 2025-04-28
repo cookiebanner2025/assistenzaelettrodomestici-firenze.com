@@ -122,7 +122,7 @@ const config = {
             color: '#ffffff',
             border: '1px solid #2ecc71',
             hover: {
-                background: '#27ae60',
+                background: '#27ae60 !important',
                 color: '#ffffff',
                 transform: 'translateY(-1px)'
             }
