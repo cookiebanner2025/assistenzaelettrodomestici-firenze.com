@@ -2857,14 +2857,27 @@ function injectConsentHTML(detectedCookies, language = 'en') {
 
 /* Hover state - optional (keeps same style) */
 #rejectAllBtn.cookie-btn.reject-btn:hover {
-    background-color: #ffffff !important;
+    background-color: #ffeeed !important;
     color: #ff0000 !important;
     border: 1px solid #ff0000 !important;
 }
 
+#adjustConsentBtn.cookie-btn.adjust-btn {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+}
 
+#acceptAllBtn.cookie-btn.accept-btn {
+    background-color: #4CAF50 !important; /* Green color */
+    color: black !important;
+    border: 1px solid transparent !important; /* Transparent border by default */
+    transition: border-color 0.3s ease !important; /* Smooth transition for hover effect */
+}
 
-
+#acceptAllBtn.cookie-btn.accept-btn:hover {
+    border-color: black !important; /* Black border on hover */
+}
     </style>`;
     
     document.body.insertAdjacentHTML('beforeend', html);
