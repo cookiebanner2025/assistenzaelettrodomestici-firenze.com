@@ -1,20 +1,6 @@
-/**
- * Ultimate GDPR Cookie Consent Solution v4.4 - Advanced Edition
- * - Fully organized configuration with separate styling controls
- * - Complete admin dashboard with password protection
- * - Enhanced analytics tracking
- * - Multi-language support
- * - Mobile-friendly cookie details display
- * - Three-section analytics dashboard (1 day, 7 days, 30 days)
- * - Animation transition controls
- * - Banner scheduling functionality
- * - Consent analytics link
- */
-
-// ============== CONFIGURATION SECTION ============== //
 const config = {
     // Domain restriction
-    allowedDomains: ['dev-rpractice.pantheonsite.io','assistenzaelettrodomestici-firenze.com'],
+    allowedDomains: ['dev-rpractice.pantheonsite.io', 'assistenzaelettrodomestici-firenze.com'],
     
     // Behavior configuration
     behavior: {
@@ -63,7 +49,7 @@ const config = {
     // Language configuration
     languageConfig: {
         defaultLanguage: 'it',
-        availableLanguages: [en,it], // Only en and fr will be used as requested
+        availableLanguages: ['it', 'en'], // Only en and fr will be used as requested
         showLanguageSelector: true,
         autoDetectLanguage: true
     },
@@ -84,7 +70,7 @@ const config = {
         storageDays: 365,
         showDashboard: true,
         passwordProtect: true,
-        dashboardPassword: 'admin123',
+        dashboardPassword: 'firenze',
         passwordCookieDuration: 365,
         trackPageViews: true,
         trackEvents: true,
