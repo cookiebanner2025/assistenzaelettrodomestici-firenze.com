@@ -2784,8 +2784,8 @@ function injectConsentHTML(detectedCookies, language = 'en') {
         .cookie-settings-button {
             width: 50px;
             height: 50px;
-            bottom: 15px;
-            ${config.behavior.floatingButtonPosition === 'left' ? 'left: 15px;' : 'right: 15px;'}
+            bottom: 57px;
+            ${config.behavior.floatingButtonPosition === 'left' ? 'left: 4px;' : 'right: 15px;'}
         }
         
         .cookie-admin-button {
