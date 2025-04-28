@@ -2823,6 +2823,30 @@ function injectConsentHTML(detectedCookies, language = 'en') {
             padding: 8px 10px;
         }
     }
+
+
+
+
+
+
+
+.elementor-kit-1157 button, .elementor-kit-1157 input[type="button"], .elementor-kit-1157 input[type="submit"], .elementor-kit-1157 .elementor-button {
+    background-color: var(--e-global-color-accent);
+    font-family: var(--e-global-typography-ba6914a-font-family), Sans-serif;
+    font-size: var(--e-global-typography-ba6914a-font-size);
+    font-weight: var(--e-global-typography-ba6914a-font-weight);
+    line-height: var(--e-global-typography-ba6914a-line-height);
+    color: var(--e-global-color-21bfb04);
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 25px 25px 25px 25px;
+    padding: 15px 24px 15px 14px;
+}
+
+
+
+
+
     </style>`;
     
     document.body.insertAdjacentHTML('beforeend', html);
