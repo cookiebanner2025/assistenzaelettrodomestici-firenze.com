@@ -1380,10 +1380,10 @@ function checkGeoTargeting(geoData) {
 
 // Detect user language based on country and browser settings
 function detectUserLanguage(geoData) {
-    // First check if language is stored in cookie
+    // First check if language is stored in cookie (if remembering is enabled)
     if (config.behavior.rememberLanguage) {
         const preferredLanguage = getCookie('preferred_language');
-        if (preferredLanguage && translations[preferredLanguage]) {
+        if (preferredLanguage && config.languageConfig.availableLanguages.includes(preferredLanguage)) {
             return preferredLanguage;
         }
     }
@@ -1391,19 +1391,19 @@ function detectUserLanguage(geoData) {
     // Then try to get language from country if auto-detection is enabled
     if (config.languageConfig.autoDetectLanguage && geoData && geoData.country) {
         const countryLang = countryLanguageMap[geoData.country];
-        if (countryLang && translations[countryLang]) {
+        if (countryLang && config.languageConfig.availableLanguages.includes(countryLang)) {
             return countryLang;
         }
     }
     
-    // Fallback to browser language
+    // Then check browser language (only if it's in available languages)
     const browserLang = (navigator.language || 'en').split('-')[0];
-    if (translations[browserLang]) {
+    if (config.languageConfig.availableLanguages.includes(browserLang)) {
         return browserLang;
     }
     
     // Final fallback to configured default language
-    return config.languageConfig.defaultLanguage || 'en';
+    return config.languageConfig.defaultLanguage;
 }
 
 // Get available languages for dropdown
