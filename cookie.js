@@ -3001,25 +3001,26 @@ function initializeCookieConsent(detectedCookies, language) {
     });
     
     // Setup cookie value toggles for mobile
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('toggle-cookie-value')) {
-            const cell = e.target.closest('.cookie-value-cell');
-            const full = cell.querySelector('.cookie-value-full');
-            const truncated = cell.querySelector('.cookie-value-truncated');
-            
-            if (e.target.dataset.state === 'truncated') {
-                full.style.display = 'inline';
-                truncated.style.display = 'none';
-                e.target.textContent = 'Show full';
-                e.target.dataset.state = 'full';
-            } else {
-                full.style.display = 'none';
-                truncated.style.display = 'inline';
-                e.target.textContent = 'Show full';
-                e.target.dataset.state = 'truncated';
-            }
+// Setup cookie value toggles for mobile
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('toggle-cookie-value')) {
+        const cell = e.target.closest('.cookie-value-cell');
+        const full = cell.querySelector('.cookie-value-full');
+        const truncated = cell.querySelector('.cookie-value-truncated');
+        
+        if (e.target.dataset.state === 'truncated') {
+            full.style.display = 'inline';
+            truncated.style.display = 'none';
+            e.target.textContent = 'Hide full';
+            e.target.dataset.state = 'full';
+        } else {
+            full.style.display = 'none';
+            truncated.style.display = 'inline';
+            e.target.textContent = 'Show full';
+            e.target.dataset.state = 'truncated';
         }
-    });
+    }
+});
     
     // Setup admin button if enabled
     if (config.analytics.enabled && config.analytics.showDashboard && config.behavior.showAdminButton) {
